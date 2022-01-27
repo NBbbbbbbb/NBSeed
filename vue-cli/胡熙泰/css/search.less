@@ -1,0 +1,288 @@
+// 文字居中
+//.textCentered(36px);
+.textCentered(@h) {
+    line-height: @h;
+    text-align: center;
+}
+
+// 两边靠边，中间的平分主轴上的剩余空间 
+//&:extend(.alignBothSides);
+.alignBothSides {
+    display: flex;
+    justify-content: space-between;
+}
+
+// 设置居中布局
+//&:extend(.layout);
+.layout {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+// 垂直居中
+//&:extend(.VC);
+.VC {
+    display: flex;
+    align-items: center;
+}
+
+// 水平居中
+//&:extend(.CH);
+.CH {
+    display: flex;
+    justify-content: center;
+}
+
+//头部
+.header {
+    .header_middle {
+        height: 30px;
+        background-color: #eaeaea;
+        &:extend(.VC);
+
+        .header_middle_title {
+            &:extend(.alignBothSides);
+            &:extend(.layout);
+
+            .left_header {
+                a:first-child {
+                    border-right: 0.5px solid #ccc;
+                    padding-right: 5px;
+                }
+
+                a:last-child {
+                    padding-left: 5px;
+                }
+            }
+
+            .right_header {
+                &:extend(.alignBothSides);
+
+                li {
+                    border-right: 0.5px solid #ccc;
+                    padding: 0 10px;
+                }
+
+                li:last-child {
+                    border-right: transparent
+                }
+            }
+        }
+    }
+
+    .header_logo_search_box {
+        &:extend(.layout);
+        &:extend(.VC);
+        &:extend(.alignBothSides);
+        height: 106px;
+
+        .header_logo {
+            margin: 25px 45px;
+        }
+
+        .header_search_box {
+            input {
+                box-sizing: border-box;
+                width: 490px;
+                height: 32px;
+                border: 2px solid #ea4a36;
+            }
+
+            button {
+                width: 68px;
+                height: 32px;
+                background-color: #ea4a36;
+                border: none;
+                color: #fff;
+            }
+        }
+
+    }
+
+}
+
+//商品分类导航
+.type_nav {
+
+    border-bottom: 2px solid #e1251b;
+
+    .type_middle {
+        position: relative;
+        &:extend(.layout);
+
+        .type_middle_nav {
+
+            &:extend(.VC);
+            display: flex;
+            height: 45px;
+
+            h3 {
+                .textCentered(45px);
+                width: 210px;
+                height: 45px;
+                background-color: #e1251b;
+                color: #fff;
+            }
+
+            nav {
+                a {
+                    margin: 0 20px;
+                }
+
+                font-size: 16px;
+            }
+        }
+
+        .type_nav_list {
+            position: absolute;
+            width: 210px;
+            background-color: #fafafa;
+            top: 47px;
+
+            li {
+                &:extend(.VC);
+                height: 30px;
+                margin-left: 20px;
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+//列表
+.list {
+    &:extend(.layout);
+    &:extend(.alignBothSides);
+
+    .banner {
+        margin: 4px 0px 0px 233px;
+        width: 706px;
+
+        img {
+            height: 446px;
+            width: 706px;
+        }
+    }
+
+    .nav_right {
+        width: 240px;
+        height: 446px;
+        margin-top: 4px;
+        border: 1px solid #ccc;
+
+    }
+
+    .nav_right {
+        box-sizing: border-box;
+
+        .express {
+            &:extend(.VC);
+            &:extend(.alignBothSides);
+            padding: 0 15px;
+            height: 36px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .new_autumn {
+            img {
+                width: 238px;
+                margin-top: 8px;
+            }
+        }
+
+        .nows li {
+            padding: 6px 15px;
+        }
+
+
+        .sprite_map {
+            display: flex;
+            flex-wrap: wrap;
+            border-top: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+
+            li {
+                &:nth-child(4n) {
+                    border-right: transparent;
+                }
+
+                &:nth-child(n+9) {
+                    border-bottom: transparent;
+                }
+
+                border-right: 1px solid #ccc;
+                border-bottom: 1px solid #ccc;
+                // margin: 3.2px;
+                padding: 0px 3.3px;
+                box-sizing: border-box;
+
+                i {
+
+                    display: block;
+                    width: 52px;
+                    height: 40px;
+                    background-image: url(../images/home/icons.png);
+
+                }
+
+                .a {
+                    background-position: -4px -4px;
+                }
+
+                .b {
+                    background-position: -70px -4px;
+                }
+
+                .c {
+                    background-position: -134px -4px;
+                }
+
+                .d {
+                    background-position: -195px -4px;
+                }
+
+                .e {
+                    background-position: -7px -74px;
+                }
+
+                .f {
+                    background-position: -70px -74px;
+                }
+
+                .g {
+                    background-position: -133px -71px;
+                }
+
+                .h {
+                    background-position: -196px -71px;
+                }
+
+                .i {
+                    background-position: -7px -143px;
+                }
+
+                .j {
+                    background-position: -70px -145px;
+                }
+
+                .k {
+                    background-position: -133px -142px;
+                }
+
+                .l {
+                    background-position: -199px -142px;
+                }
+
+                div {
+                    width: 52px;
+                    height: 22px;
+                    .textCentered(22px);
+                }
+            }
+
+
+
+        }
+    }
+
+}
