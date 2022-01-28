@@ -7,10 +7,10 @@
           <li>尚品汇欢迎您！</li>
           <li>
             请
-            <a herf>登录</a> |
+            <router-link to="/login">登录</router-link> |
           </li>
           <li>
-            <a href>免费注册</a>
+            <router-link to="/register">免费注册</router-link>
           </li>
         </ul>
         <ul class="right">
@@ -44,13 +44,13 @@
     <div class="logo">
       <div class="w">
         <div class="left">
-          <div>
+          <div @click="toHome">
             <img src="./logo.png" alt />
           </div>
         </div>
         <div class="right">
           <input type="text" class="input" />
-          <button class="search">搜索</button>
+          <router-link to="/search" class="search" >搜索</router-link>
         </div>
       </div>
     </div>
@@ -58,7 +58,14 @@
 </template>
 
 <script>
-export default {};
+export default {
+  name:"Header",
+  methods:{
+    toHome(){
+      this.$router.push("/home")
+    }
+  }
+};
 </script>
 
 <style lang="less" scoped>
@@ -101,10 +108,12 @@ export default {};
       height: 30px;
     }
     .search {
+      display: inline-block;
+      line-height: 32px;
+      text-align: center;
       width: 68px;
       height: 32px;
       background-color: red;
-      border: 0px;
       color: white;
       margin-top: 37px;
     }
