@@ -1,13 +1,15 @@
 <template>
-  <div>Search</div>
+  <div>
+    Search
+    <Navtype />
+  </div>
 </template>
 
 <script>
 export default {
-name:"Search"
-}
+  name: "Search"
+};
 </script>
 
 <style lang="less" scoped>
-
 </style>
