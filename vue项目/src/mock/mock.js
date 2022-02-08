@@ -1,0 +1,17 @@
+//mockServer.js
+import Mock from 'mockjs'
+import banner from './banner.json'
+import floor from './floor.json'
+
+//通过mock器模拟本地数据接口
+Mock.mock("/mock/banner", {
+  code: 200,
+  data: banner
+})
+
+Mock.mock("/mock/floor", {
+  code: 200,
+  data: floor
+})
+
+
